@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="en" data-face="indigo">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yongky JOYODININGRAT — EXECUTIVE DOSSIER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;800&family=Open+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ==========================================================================
+       FOUNDATION: ULTRA-FLAT NEO-BRUTALISM
+       No gradients. No glows. No soft shadows. No blur. No glassmorphism.
+       Every element is a hard-edged rectangle or crisp glyph.
+       ========================================================================== */
+    :root {
+      --indigo: #FAA61A;
+      --amber: #FAA61A;
+      --black: #010101;
+      --white: #FEFEFE;
+      --paper: #F4F1EA;
+      --ink: #000000;
+
+      /* Active Face Tokens (Swappable between #303188 and #FAA61A) */
+      --face-primary: var(--indigo);
+      --face-secondary: var(--amber);
+      --face-primary-fg: var(--white);
+      --face-secondary-fg: var(--black);
+
+      --border-heavy: 3px solid var(--black);
+      --border-hairline: 1px solid var(--white);
+      --border-ink: 2px solid var(--black);
+    }
+
+    html[data-face="amber"] {
+      --face-primary: var(--amber);
+      --face-secondary: var(--indigo);
+      --face-primary-fg: var(--black);
+      --face-secondary-fg: var(--white);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+      backdrop-filter: none !important;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    body {
+      overflow-x: hidden;
+      position: relative;
+      background-color: var(--black);
+    }
+
+    ::selection {
+      background-color: var(--amber);
+      color: var(--black);
+    }
+
+    /* ==========================================================================
+       TYPOGRAPHY SYSTEM
+       - Hero wordmarks: lowercase Open Sans, 15-20% frame width, tight leading, 700-900
+       - Headlines: uppercase, heavy, 5-7% frame height
+       - Body/labels: Montserrat light/thin, never more than 1-2 words per line for chips
+       ========================================================================== */
+    .hero-wordmark {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      text-transform: lowercase;
+      font-size: clamp(4.2rem, 16.5vw, 19rem);
+      line-height: 0.82;
+      letter-spacing: -0.055em;
+      display: block;
+      user-select: none;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0.15em 0;
+      position: relative;
+      z-index: 3;
+    }
+
+    .wordmark-white-on-black {
+      color: var(--white);
+      background-color: var(--black);
+      display: inline-block;
+      padding: 0.08em 0.18em 0.14em;
+      border: 3px solid var(--white);
+    }
+
+    .wordmark-black-on-paper {
+      color: var(--black);
+      background-color: var(--paper);
+      display: inline-block;
+      padding: 0.08em 0.18em 0.14em;
+      border: 3px solid var(--black);
+    }
+
+    .section-headline {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.85rem, 5.8vh, 4.2rem);
+      line-height: 0.94;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.5rem;
+    }
+
+    .body-copy {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 1.15vw, 1.15rem);
+      line-height: 1.65;
+      letter-spacing: 0.01em;
+    }
+
+    .label-thin {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    /* Tiny Badge Chips: strictly 1-2 words per line, thin Montserrat */
+    .chip-cluster {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .neo-chip {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 6px 10px;
+      border: 1px solid currentColor;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.68rem;
+      line-height: 1.25;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      max-width: 112px;
+      word-spacing: 0.05em;
+      text-align: left;
+      background: transparent;
+      transition: transform 0.15s steps(2), background-color 0.15s steps(2), color 0.15s steps(2);
+    }
+
+    .neo-chip:hover {
+      transform: translate(-3px, -3px);
+      background-color: var(--face-secondary);
+      color: var(--face-secondary-fg);
+      border-color: var(--face-secondary);
+    }
+
+    /* ==========================================================================
+       FIXED HUD / CORNER BANNERS IN SAFE ZONES (Never touching hero marks)
+       ========================================================================== */
+    .top-command-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background-color: var(--black);
+      border-bottom: 2px solid var(--white);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+
+    .command-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .status-square {
+      width: 12px;
+      height: 12px;
+      background-color: var(--amber);
+      display: inline-block;
+      animation: blinkStep 1.6s steps(2, start) infinite;
+    }
+
+    @keyframes blinkStep {
+      0%, 100% { background-color: var(--amber); }
+      50% { background-color: var(--indigo); }
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .nav-btn {
+      background: var(--black);
+      color: var(--white);
+      border: 1px solid var(--white);
+      padding: 6px 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.1s steps(1), color 0.1s steps(1);
+    }
+
+    .nav-btn:hover,
+    .nav-btn.active {
+      background: var(--amber);
+      color: var(--black);
+      border-color: var(--amber);
+      font-weight: 600;
+    }
+
+    .face-toggle-btn {
+      background: var(--face-primary);
+      color: var(--face-primary-fg);
+      border: 2px solid var(--white);
+      padding: 6px 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .face-toggle-btn:hover {
+      background: var(--face-secondary);
+      color: var(--face-secondary-fg);
+    }
+
+    .swatch-pair {
+      display: inline-flex;
+      border: 1px solid var(--white);
+    }
+
+    .swatch-pair span {
+      width: 10px;
+      height: 10px;
+      display: block;
+    }
+
+    /* Safe-Zone Corner Banners inside Sections */
+    .corner-safe-zone {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0 0 3.5rem 0;
+      position: relative;
+      z-index: 4;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .corner-safe-zone-bottom {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 3.5rem 0 0 0;
+      position: relative;
+      z-index: 4;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .corner-banner {
+      border: 2px solid currentColor;
+      padding: 6px 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: transparent;
+    }
+
+    .corner-banner-solid-amber {
+      background-color: var(--amber);
+      color: var(--black);
+      border: 2px solid var(--black);
+      font-weight: 600;
+    }
+
+    .corner-banner-solid-indigo {
+      background-color: var(--indigo);
+      color: var(--white);
+      border: 2px solid var(--white);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       FULL-BLEED SOLID COLOR FIELDS & SCROLL REVEAL ARCHITECTURE
+       ========================================================================== */
+    .full-bleed-field {
+      width: 100%;
+      min-height: 100vh;
+      padding: 96px 5vw 84px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 4px solid var(--black);
+    }
+
+    /* Color Field Themes */
+    .field-black {
+      background-color: var(--black);
+      color: var(--white);
+      border-bottom-color: var(--white);
+    }
+
+    .field-paper {
+      background-color: var(--paper);
+      color: var(--black);
+      border-bottom-color: var(--black);
+    }
+
+    .field-primary {
+      background-color: var(--face-primary);
+      color: var(--face-primary-fg);
+      border-bottom-color: var(--black);
+    }
+
+    .field-secondary {
+      background-color: var(--face-secondary);
+      color: var(--face-secondary-fg);
+      border-bottom-color: var(--black);
+    }
+
+    .field-white {
+      background-color: var(--white);
+      color: var(--black);
+      border-bottom-color: var(--black);
+    }
+
+    .centered-stage {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 3;
+      gap: 2.5rem;
+    }
+
+    /* Scrolling Reveal: Every section & block slides up mechanically on scroll down */
+    .reveal-slide {
+      opacity: 0;
+      transform: translateY(72px);
+      transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s linear;
+      will-change: transform, opacity;
+    }
+
+    .reveal-slide.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+
+    /* ==========================================================================
+       ANIMATED GRAPHICS OVERLAYS (Polytope Chord Mandala + Technical Vector Grid)
+       ========================================================================== */
+    .graphic-overlay-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .polytope-svg {
+      width: min(78vw, 760px);
+      height: min(78vw, 760px);
+      animation: rotateMechanical 60s linear infinite;
+      opacity: 0.22;
+    }
+
+    .polytope-svg-reverse {
+      animation: rotateMechanicalReverse 45s linear infinite;
+    }
+
+    @keyframes rotateMechanical {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes rotateMechanicalReverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+
+    /* Hard-edged geometric ticker bar between major sections */
+    .kinetic-ticker {
+      width: 100%;
+      background-color: var(--black);
+      color: var(--white);
+      border-top: 2px solid var(--white);
+      border-bottom: 2px solid var(--white);
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 10px 0;
+      position: relative;
+      z-index: 5;
+    }
+
+    .kinetic-ticker-amber {
+      background-color: var(--amber);
+      color: var(--black);
+      border-top: 3px solid var(--black);
+      border-bottom: 3px solid var(--black);
+    }
+
+    .ticker-track {
+      display: inline-block;
+      animation: marqueeSlide 28s linear infinite;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    @keyframes marqueeSlide {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ==========================================================================
+       HARD-EDGED EXECUTIVE CARDS & GRIDS
+       ========================================================================== */
+    .brutalist-box {
+      border: 3px solid currentColor;
+      padding: 2rem;
+      background-color: transparent;
+      text-align: left;
+      position: relative;
+    }
+
+    .brutalist-box-solid-black {
+      background-color: var(--black);
+      color: var(--white);
+      border: 3px solid var(--black);
+    }
+
+    .brutalist-box-solid-paper {
+      background-color: var(--paper);
+      color: var(--black);
+      border: 3px solid var(--black);
+    }
+
+    .brutalist-box-solid-white {
+      background-color: var(--white);
+      color: var(--black);
+      border: 3px solid var(--black);
+    }
+
+    /* Experience Timeline Matrix */
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 20px;
+      width: 100%;
+    }
+
+    .exp-card {
+      background-color: var(--paper);
+      color: var(--black);
+      border: 3px solid var(--black);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      position: relative;
+      transition: transform 0.15s steps(2), background-color 0.15s steps(2);
+    }
+
+    .exp-card:hover {
+      transform: translate(-6px, -6px);
+      background-color: var(--white);
+    }
+
+    .exp-card.featured-exp {
+      background-color: var(--black);
+      color: var(--white);
+      border: 3px solid var(--black);
+    }
+
+    .exp-card.featured-exp:hover {
+      background-color: var(--indigo);
+      color: var(--white);
+    }
+
+    .exp-index {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      background-color: var(--amber);
+      color: var(--black);
+      border: 2px solid var(--black);
+      display: inline-block;
+    }
+
+    .exp-company {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.45rem;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin: 14px 0 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .exp-role {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      background-color: var(--indigo);
+      color: var(--white);
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .featured-exp .exp-role {
+      background-color: var(--amber);
+      color: var(--black);
+    }
+
+    .exp-period {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 14px;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 8px;
+    }
+
+    .sub-role-list {
+      list-style: none;
+      margin-top: 10px;
+      border-left: 2px solid currentColor;
+      padding-left: 12px;
+    }
+
+    .sub-role-list li {
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+      font-weight: 300;
+    }
+
+    .sub-role-list li strong {
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       DARK UI DEMO INTERFACE (Layout Spec: Dark interfaces, white panels,
+       thin white hairline outlines, sparse saturated status accents)
+       ========================================================================== */
+    .dark-ui-console {
+      width: 100%;
+      background-color: var(--black);
+      color: var(--white);
+      border: 1px solid var(--white);
+      text-align: left;
+    }
+
+    .dark-ui-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--white);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .dark-ui-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--white);
+    }
+
+    .dark-ui-tab {
+      background-color: var(--black);
+      color: var(--white);
+      border: none;
+      border-right: 1px solid var(--white);
+      padding: 12px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .dark-ui-tab.active {
+      background-color: var(--white);
+      color: var(--black);
+      font-weight: 600;
+    }
+
+    .dark-ui-body {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      border-bottom: 1px solid var(--white);
+    }
+
+    .dark-ui-hairline-cell {
+      padding: 24px;
+      border-right: 1px solid var(--white);
+    }
+
+    /* White Panels inside Dark Interface per spec */
+    .white-ui-panel {
+      background-color: var(--white);
+      color: var(--black);
+      border: 1px solid var(--white);
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .white-ui-panel:last-child {
+      margin-bottom: 0;
+    }
+
+    .status-pill-accent {
+      display: inline-block;
+      padding: 2px 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background-color: var(--amber);
+      color: var(--black);
+    }
+
+    .status-pill-indigo {
+      display: inline-block;
+      padding: 2px 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background-color: var(--indigo);
+      color: var(--white);
+    }
+
+    .telemetry-bar-row {
+      margin-top: 14px;
+    }
+
+    .telemetry-bar-track {
+      width: 100%;
+      height: 14px;
+      border: 1px solid var(--white);
+      background-color: var(--black);
+      margin-top: 6px;
+      position: relative;
+    }
+
+    .telemetry-bar-fill {
+      height: 100%;
+      background-color: var(--amber);
+      transition: width 0.35s steps(8);
+    }
+
+    .telemetry-bar-fill.indigo-fill {
+      background-color: var(--indigo);
+    }
+
+    /* Client Sector Matrix inside Dark UI */
+    .sector-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      width: 100%;
+    }
+
+    .sector-cell {
+      padding: 18px;
+      border-right: 1px solid var(--white);
+      border-top: 1px solid var(--white);
+      text-align: left;
+    }
+
+    /* ==========================================================================
+       CREDENTIALS & 64-ITEM ARCHIVE LEDGER
+       ========================================================================== */
+    .filter-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-btn {
+      background-color: var(--black);
+      color: var(--white);
+      border: 2px solid var(--black);
+      padding: 8px 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background-color: var(--amber);
+      color: var(--black);
+      font-weight: 600;
+    }
+
+    .cert-ledger {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 10px;
+      text-align: left;
+    }
+
+    .cert-row {
+      background-color: var(--white);
+      color: var(--black);
+      border: 2px solid var(--black);
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      transition: transform 0.12s steps(2), background-color 0.12s steps(2);
+    }
+
+    .cert-row:hover {
+      background-color: var(--amber);
+      transform: translate(-3px, -3px);
+    }
+
+    .cert-year {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      font-size: 0.75rem;
+      background-color: var(--black);
+      color: var(--white);
+      padding: 2px 6px;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       CONTACT & QR VECTOR MODULE
+       ========================================================================== */
+    .contact-console {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      width: 100%;
+      border: 3px solid var(--black);
+      background-color: var(--white);
+      color: var(--black);
+    }
+
+    .contact-details-pane {
+      padding: 2.5rem;
+      border-right: 3px solid var(--black);
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .contact-qr-pane {
+      padding: 2.5rem;
+      background-color: var(--paper);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .contact-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 2px solid var(--black);
+    }
+
+    .glyph-square {
+      width: 40px;
+      height: 40px;
+      background-color: var(--black);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 2px solid var(--black);
+    }
+
+    @media (max-width: 900px) {
+      .dark-ui-body,
+      .contact-console {
+        grid-template-columns: 1fr;
+      }
+      .dark-ui-hairline-cell,
+      .contact-details-pane {
+        border-right: none;
+        border-bottom: 2px solid currentColor;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       FIXED SAFE-ZONE COMMAND HEADER & PALETTE FACE SWITCHER
+       ======================================================================== -->
+  <header class="top-command-bar">
+    <div class="command-brand">
+      <span class="status-square"></span>
+      <span class="label-thin">YJ // DOSSIER_2026.10</span>
+    </div>
+
+    <nav class="nav-links" aria-label="Section Navigation">
+      <a href="#sec-hero" class="nav-btn">01 Hero</a>
+      <a href="#sec-infra" class="nav-btn">02 GPU &amp; DC UI</a>
+      <a href="#sec-exp" class="nav-btn">03 Work [12]</a>
+      <a href="#sec-matrix" class="nav-btn">04 Skills &amp; Edu</a>
+      <a href="#sec-certs" class="nav-btn">05 Credentials [64]</a>
+      <a href="#sec-contact" class="nav-btn">06 Contact</a>
+    </nav>
+
+    <button id="faceToggleBtn" class="face-toggle-btn" type="button" title="Swap Interchangeable Palette Faces (#303188 ↔ #FAA61A)">
+      <span class="swatch-pair">
+        <span style="background:#303188;"></span>
+        <span style="background:#FAA61A;"></span>
+      </span>
+      <span id="faceLabel">FACE: #303188 / #FAA61A</span>
+    </button>
+  </header>
+
+  <!-- ========================================================================
+       SECTION 01: HERO — LOWERCASE OPEN SANS WORDMARK + SAFE ZONE BANNERS
+       ======================================================================== -->
+  <section id="sec-hero" class="full-bleed-field field-black">
+    <!-- Animated Polytope Chord Graphic Overlay (Inspired by Resume Geometric Mandala) -->
+    <div class="graphic-overlay-layer" aria-hidden="true">
+      <svg id="heroPolytope" class="polytope-svg" viewBox="0 0 600 600"></svg>
+    </div>
+
+    <!-- Top Safe-Zone Corner Banners -->
+    <div class="corner-safe-zone reveal-slide">
+      <div class="corner-banner corner-banner-solid-amber">
+        <span>PERMIT // INDONESIA &amp; JAPAN</span>
+      </div>
+      <div class="chip-cluster">
+        <span class="neo-chip">RELOCATION<br>PLAUSIBLE</span>
+        <span class="neo-chip">AI-READY<br>INFRA</span>
+        <span class="neo-chip">29+ YRS<br>ICT LEAD</span>
+      </div>
+      <div class="corner-banner corner-banner-solid-indigo">
+        <span>INTRAPRENEUR &amp; CONSULTANT</span>
+      </div>
+    </div>
+
+    <!-- Center Hero Wordmark (15-20% frame width, lowercase Open Sans, 800 weight) -->
+    <div class="centered-stage">
+      <div class="reveal-slide reveal-delay-1">
+        <span class="label-thin" style="color: var(--amber); display:block; margin-bottom: 14px;">
+          [ EXECUTIVE IDENTITY // CAST/|SOFT FOUNDER &amp; FORWARD DEPLOYED OFFICER ]
+        </span>
+        <h1 class="hero-wordmark wordmark-white-on-transparent">cybersniffer</h1>
+      </div>
+
+      <div class="reveal-slide reveal-delay-2" style="max-width: 900px;">
+        <h2 class="section-headline" style="color: var(--amber);">
+          yongky joyodiningrat
+        </h2>
+        <p class="body-copy" style="color: var(--white); border: 1px solid var(--white); padding: 1.75rem; background: var(--transparent);">
+          Visionary and ambitious leader delivering thought leadership and cumulative in-depth understanding of many emerging ICT technologies based on combined experience in support &amp; implementation. Self-motivated and effective leader with record of success managing multiple projects. Strong collaborative engagement skills, work ethic, energy, passion and humour. Excellent interpersonal, written and verbal communication ability, hands-on style, working equally well in both team-oriented and self-directed environments with a degree of autonomy.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom Safe-Zone Corner Banners & Tiny 1-2 Word Chips -->
+    <div class="corner-safe-zone-bottom reveal-slide reveal-delay-3">
+      <div class="corner-banner">
+        <span>LOWER NORTH QUARTER // GREATER JAKARTA 17426 ID</span>
+      </div>
+      <div class="chip-cluster">
+        <span class="neo-chip">FIBER<br>OPTICS</span>
+        <span class="neo-chip">DWDM<br>SYSTEMS</span>
+        <span class="neo-chip">TIER-III<br>DATA CTR</span>
+        <span class="neo-chip">40KW+<br>COOLING</span>
+        <span class="neo-chip">SUBMARINE<br>CABLE</span>
+      </div>
+      <a href="#sec-infra" class="corner-banner corner-banner-solid-amber" style="text-decoration:none;">
+        <span>SCROLL DOSSIER ↓</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SOLID KINETIC SEPARATOR -->
+  <div class="kinetic-ticker kinetic-ticker-amber">
+    <div class="ticker-track">
+      YONGKY JOYODININGRAT &nbsp;■&nbsp; INTRAPRENEUR &amp; CONSULTANT &nbsp;■&nbsp; CAST/|SOFT FOUNDER &nbsp;■&nbsp; DATA CENTER &amp; GPU BUILD-OUT &nbsp;■&nbsp; PALAPA RING SUBMARINE &amp; DWDM &nbsp;■&nbsp; INDONESIA &amp; JAPAN WORK PERMIT &nbsp;■&nbsp; YONGKY JOYODININGRAT &nbsp;■&nbsp; INTRAPRENEUR &amp; CONSULTANT &nbsp;■&nbsp; CAST/|SOFT FOUNDER &nbsp;■&nbsp; DATA CENTER &amp; GPU BUILD-OUT &nbsp;■&nbsp; PALAPA RING SUBMARINE &amp; DWDM &nbsp;■&nbsp; INDONESIA &amp; JAPAN WORK PERMIT &nbsp;■&nbsp;
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SECTION 02: DATA CENTER INFRASTRUCTURE & GPU BUILD-OUT (DARK UI DEMO)
+       Spec: Dark interfaces, white panels, thin white hairline outlines,
+       sparse saturated status accents (#303188 & #FAA61A).
+       ======================================================================== -->
+  <section id="sec-infra" class="full-bleed-field field-primary">
+    <div class="graphic-overlay-layer" aria-hidden="true">
+      <svg class="polytope-svg polytope-svg-reverse" viewBox="0 0 600 600" data-polytope="secondary"></svg>
+    </div>
+
+    <div class="corner-safe-zone reveal-slide">
+      <div class="corner-banner" style="background:var(--black); color:var(--white); border-color:var(--white);">
+        <span>MODULE 02 // INFRASTRUCTURE TELEMETRY UI</span>
+      </div>
+      <div class="chip-cluster">
+        <span class="neo-chip" style="background:var(--black); color:var(--white); border-color:var(--white);">40KW+<br>PER RACK</span>
+        <span class="neo-chip" style="background:var(--black); color:var(--white); border-color:var(--white);">TIER-II/III<br>MMR</span>
+        <span class="neo-chip" style="background:var(--black); color:var(--white); border-color:var(--white);">24/7 NOC<br>SCADA</span>
+      </div>
+      <div class="corner-banner corner-banner-solid-amber">
+        <span>CDCP CERTIFIED // EPI 2008</span>
+      </div>
+    </div>
+
+    <div class="centered-stage">
+      <div class="reveal-slide">
+        <span class="hero-wordmark wordmark-black-on-paper">infra</span>
+      </div>
+
+      <div class="reveal-slide reveal-delay-1" style="max-width: 980px;">
+        <h2 class="section-headline">DATA CENTER INFRASTRUCTURE &amp; GPU BUILD-OUT</h2>
+        <p class="body-copy">
+          Extensive expertise in end-to-end data center facility design, implementation, and commissioning across power systems, high-speed interconnect, precision cooling, and intelligent building management. Proven delivery record with multinational corporations, financial institutions, telecommunications operators, and energy sector clients throughout Indonesia.
+        </p>
+      </div>
+
+      <!-- DARK UI DEMO CONSOLE (White panels, 1px white hairlines, sparse saturated accents) -->
+      <div class="dark-ui-console reveal-slide reveal-delay-2">
+        <div class="dark-ui-header">
+          <div>
+            <span class="status-pill-accent">LIVE ARCHITECTURE SPEC</span>
+            <span class="label-thin" style="margin-left:10px;">DC_GPU_FACILITY_MATRIX // V4.2</span>
+          </div>
+          <div class="label-thin">SELECT SUBSYSTEM TO INSPECT ARCHITECTURE →</div>
+        </div>
+
+        <!-- Subsystem Selector Tabs -->
+        <div class="dark-ui-tabs" role="tablist">
+          <button class="dark-ui-tab active" data-pillar="power" type="button">01 // POWER &amp; SUBSTATION</button>
+          <button class="dark-ui-tab" data-pillar="dwdm" type="button">02 // INTERCONNECT &amp; DWDM</button>
+          <button class="dark-ui-tab" data-pillar="thermal" type="button">03 // THERMAL 40KW+ HVAC</button>
+          <button class="dark-ui-tab" data-pillar="mmr" type="button">04 // TIER-III MMR &amp; MODULAR</button>
+          <button class="dark-ui-tab" data-pillar="bms" type="button">05 // SCADA &amp; BMS NOC</button>
+        </div>
+
+        <!-- Active Subsystem White Panel + Telemetry Hairline Grid -->
+        <div class="dark-ui-body">
+          <div class="dark-ui-hairline-cell">
+            <div id="pillarWhitePanel" class="white-ui-panel">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <span id="pillarCode" class="status-pill-indigo">SYS-01 // MV/LV GRID TO RACK</span>
+                <span id="pillarMetricBadge" class="status-pill-accent">REDUNDANT N+1 / 2N</span>
+              </div>
+              <h3 id="pillarTitle" style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:1.55rem; text-transform:uppercase; margin-bottom:10px;">
+                Power Infrastructure &amp; Substation Integration
+              </h3>
+              <p id="pillarDesc" class="body-copy" style="color:var(--black); font-weight:400;">
+                Led electrical infrastructure projects from grid interconnection to rack-level distribution, commissioned medium-voltage substations and backup power systems for Bank Indonesia, CNOOC and Donggi Senoro LNG. Experience in low-voltage distribution, and integration with on-site generation for mission-critical facilities.
+              </p>
+              <div style="margin-top:16px; padding-top:12px; border-top:2px solid var(--black); display:flex; flex-wrap:wrap; gap:8px;" id="pillarClients">
+                <span class="status-pill-indigo">BANK INDONESIA</span>
+                <span class="status-pill-indigo">CNOOC</span>
+                <span class="status-pill-indigo">DONGGI SENORO LNG</span>
+              </div>
+            </div>
+
+            <!-- Second White Panel: Relevance to GPU Data Center Build-Out -->
+            <div class="white-ui-panel">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span class="status-pill-accent">AI / GPU READINESS VERIFICATION</span>
+                <span class="label-thin" style="color:var(--black); font-weight:600;">SCALE FOUNDATION</span>
+              </div>
+              <p class="body-copy" style="color:var(--black); font-size:0.9rem; font-weight:400;">
+                The breadth of facilities engineering experience—from remote oil and gas installations to Tier-III financial services data centers—provides a proven foundation for GPU data center expansion at scale.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Hairline Telemetry Pane -->
+          <div class="dark-ui-hairline-cell" style="border-right:none; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div class="label-thin" style="color:var(--amber); margin-bottom:12px;">
+                GPU ACCELERATED INFRASTRUCTURE DEMANDS
+              </div>
+
+              <div class="telemetry-bar-row">
+                <div style="display:flex; justify-content:space-between;" class="label-thin">
+                  <span>SUBSTATION-LEVEL POWER REDUNDANCY</span>
+                  <span style="color:var(--amber);">100%</span>
+                </div>
+                <div class="telemetry-bar-track">
+                  <div class="telemetry-bar-fill" style="width:100%;"></div>
+                </div>
+              </div>
+
+              <div class="telemetry-bar-row">
+                <div style="display:flex; justify-content:space-between;" class="label-thin">
+                  <span>ULTRA-LOW-LATENCY DWDM INTERCONNECT</span>
+                  <span style="color:var(--amber);">98%</span>
+                </div>
+                <div class="telemetry-bar-track">
+                  <div class="telemetry-bar-fill indigo-fill" style="width:98%;"></div>
+                </div>
+              </div>
+
+              <div class="telemetry-bar-row">
+                <div style="display:flex; justify-content:space-between;" class="label-thin">
+                  <span>PRECISION COOLING (40KW+ PER RACK)</span>
+                  <span style="color:var(--amber);">96%</span>
+                </div>
+                <div class="telemetry-bar-track">
+                  <div class="telemetry-bar-fill" style="width:96%;"></div>
+                </div>
+              </div>
+
+              <div class="telemetry-bar-row">
+                <div style="display:flex; justify-content:space-between;" class="label-thin">
+                  <span>PREDICTIVE SCADA / BMS CAPACITY PLANNING</span>
+                  <span style="color:var(--amber);">100%</span>
+                </div>
+                <div class="telemetry-bar-track">
+                  <div class="telemetry-bar-fill indigo-fill" style="width:100%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div style="border:1px solid var(--white); padding:14px; margin-top:20px;">
+              <div class="label-thin" style="color:var(--amber); margin-bottom:6px;">ACTIVE ADVISORY MANDATE</div>
+              <div style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:0.95rem;">
+                CAST/|SOFT — AI-READY FACILITY STRATEGY &amp; KEMENTRIAN PEKERJAAN UMUM LARGE-SCALE ADVISORY TOOLING
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- All 5 Industry Sectors & Every Named Enterprise Client -->
+        <div style="padding:14px 18px; border-bottom:1px solid var(--white); display:flex; justify-content:space-between; align-items:center;">
+          <span class="label-thin" style="color:var(--amber);">COMMISSIONED ENTERPRISE &amp; CARRIER FOOTPRINT (5 SECTORS // 50+ INSTITUTIONS)</span>
+          <span class="status-pill-indigo">INDONESIA-WIDE</span>
+        </div>
+        <div class="sector-grid">
+          <div class="sector-cell">
+            <div class="status-pill-accent" style="margin-bottom:8px;">FINANCIAL SERVICES [22]</div>
+            <p class="body-copy" style="font-size:0.78rem; line-height:1.55;">
+              Bank Indonesia, BTPN, Standard Chartered, Rabobank, Allianz, Citibank, Credit Suisse, Goldman Sachs, Merrill Lynch, Bank Mandiri, BII, Bank Nusantara Parahyangan, Danamon, Bank of America, Wachovia, Nomura, UOB Buana, AIA, Manulife, Barclays, ANZ, Cigna.
+            </p>
+          </div>
+          <div class="sector-cell">
+            <div class="status-pill-indigo" style="margin-bottom:8px;">ENERGY &amp; RESOURCES [13]</div>
+            <p class="body-copy" style="font-size:0.78rem; line-height:1.55;">
+              BP, Chevron, CNOOC, ConocoPhillips, Total E&amp;P Indonesie, Star Energy Limited, Star Energy Geothermal, Talisman, Donggi Senoro LNG, Pupuk Kaltim, Inco, Antam, Bumi Resources.
+            </p>
+          </div>
+          <div class="sector-cell">
+            <div class="status-pill-accent" style="margin-bottom:8px;">INDUSTRIAL &amp; MFG [10]</div>
+            <p class="body-copy" style="font-size:0.78rem; line-height:1.55;">
+              United Tractors, Astra Honda Motor, Toyota Astra Motor, Honda Prospect Motor, Semen Gresik, Dow Chemical, Festo, 3M, Unicharm, Djarum.
+            </p>
+          </div>
+          <div class="sector-cell" style="border-right:none;">
+            <div class="status-pill-indigo" style="margin-bottom:8px;">TRANSPORT &amp; GOVT [5]</div>
+            <p class="body-copy" style="font-size:0.78rem; line-height:1.55;">
+              <strong>Transportation &amp; Logistics:</strong> Meratus Line, Pelindo, Garuda Indonesia, DHL.<br><br>
+              <strong>Government &amp; Infrastructure:</strong> PLN Ungaran, BAKTI Palapa Ring Barat &amp; Tengah, Kementrian Pekerjaan Umum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="corner-safe-zone-bottom reveal-slide">
+      <div class="corner-banner" style="background:var(--black); color:var(--white); border-color:var(--white);">
+        <span>UPTIME INSTITUTE TIER-II / TIER-III COMPLIANT</span>
+      </div>
+      <div class="corner-banner corner-banner-solid-amber">
+        <span>NEXT: WORK EXPERIENCES ↓</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 03: WORK EXPERIENCES (COMPLETE 12-ORGANIZATION RECORD)
+       ======================================================================== -->
+  <section id="sec-exp" class="full-bleed-field field-paper">
+    <div class="graphic-overlay-layer" aria-hidden="true">
+      <svg class="polytope-svg" viewBox="0 0 600 600" data-polytope="ink"></svg>
+    </div>
+
+    <div class="corner-safe-zone reveal-slide">
+      <div class="corner-banner corner-banner-solid-indigo">
+        <span>CHRONOLOGY // 1996 — PRESENT</span>
+      </div>
+      <div class="chip-cluster">
+        <span class="neo-chip">C-SUITE<br>EXEC</span>
+        <span class="neo-chip">COUNTRY<br>DIRECTOR</span>
+        <span class="neo-chip">PRINCIPAL<br>ADVISOR</span>
+      </div>
+      <div class="corner-banner corner-banner-solid-amber">
+        <span>12 ORGANIZATIONS // 19 ROLES</span>
+      </div>
+    </div>
+
+    <div class="centered-stage">
+      <div class="reveal-slide">
+        <span class="hero-wordmark wordmark-white-on-black">works</span>
+      </div>
+
+      <div class="reveal-slide reveal-delay-1">
+        <h2 class="section-headline">WORK EXPERIENCES</h2>
+      </div>
+
+      <!-- Complete 12-Company Brutalist Grid -->
+      <div class="exp-grid">
+        <!-- 01: CAST/|SOFT -->
+        <article class="exp-card featured-exp reveal-slide">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="exp-index">01 // CURRENT</span>
+              <span class="label-thin">AI &amp; INFRA ADVISORY</span>
+            </div>
+            <h3 class="exp-company">CAST/|SOFT</h3>
+            <span class="exp-role">FOUNDER &amp; FORWARD DEPLOYED OFFICER</span>
+            <span class="exp-period">Apr. 2025 – now</span>
+            <p class="body-copy" style="font-size:0.9rem;">
+              Advise technology and infrastructure clients on AI-ready facility strategy, connected with ongoing work on large-scale advisory tooling for Kementrian Pekerjaan Umum.
+            </p>
+          </div>
+        </article>
+
+        <!-- 02: PT Fiber Tekno Inovasi -->
+        <article class="exp-card reveal-slide">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="exp-index">02 // FTTH MFG</span>
+              <span class="label-thin">OPERATIONS</span>
+            </div>
+            <h3 class="exp-company">PT Fiber Tekno Inovasi</h3>
+            <span class="exp-role">DIRECTOR OF OPERATION</span>
+            <span class="exp-period">Dec. 2021 – Mar. 2025</span>
+            <p class="body-copy" style="font-size:0.9rem;">
+              Directed operations for a manufacturer and supplier of fiber optic and FTTH accessories, overseeing end-to-end production, supply chain, and delivery against tight infrastructure timelines.
+            </p>
+          </div>
+        </article>
+
+        <!-- 03: PT Trisula Laut Digital -->
+        <article class="exp-card reveal-slide">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="exp-index">03 // DIVEINC.CO</span>
+              <span class="label-thin">PLATFORM CTO</span>
+            </div>
+            <h3 class="exp-company">PT Trisula Laut Digital</h3>
+            <span class="exp-role">CHIEF TECHNOLOGY OFFICER</span>
+            <span class="exp-period">Mar. 2021 – Dec. 2024</span>
+            <p class="body-copy" style="font-size:0.9rem;">
+              Led technology strategy and diveinc.co platform reliability for a high-availability divers’ marketplace, with focus on performance under variable load.
+            </p>
+          </div>
+        </article>
+
+        <!-- 04: PT Avenew Indonesia -->
+        <article class="exp-card reveal-slide">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="exp-index">04 // ENTERPRISE PMP</span>
+              <span class="label-thin">GENERAL MANAGEMENT</span>
+            </div>
+            <h3 class="exp-company">PT Avenew Indonesia</h3>
+            <span class="exp-role">GENERAL MANAGER</span>
+            <span class="exp-period">Mar. 2021 – Feb. 2022</span>
+            <p class="body-copy" style="font-size:0.9rem;">
+              PMP Certification @ PLN. Directed strategic program delivery and enterprise project management certification initiatives.
+            </p>
+          </div>
+        </article>
+
+        <!-- 05: PT Surveyor Indonesia -->
+        <article class="exp-card featured-exp reveal-slide">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="exp-index">05 // PALAPA RING</span>
+              <span class="label-thin">NATIONAL STRATEGIC PROJECT</span>
+            </div>
+            <h3 class="exp-company">PT Surveyor Indonesia</h3>
+            <span class="exp-role">KONSULTAN PENGAWAS INDEPENDEN</span>
+            <span class="exp-period">Aug. 2016 – Feb. 2021</span>
+            <p class="body-copy" style="font-size:0.88rem; margin-bottom:8px;">
+              Proyek Strategis Nasional Palapa Ring Paket Barat &amp; Tengah:
+            </p>
+            <ul class="sub-role-list">
+              <li><strong>TENAGA AHLI UTAMA SUBMARINE</strong> | Aug. 2016 – Feb. 2021</li>
+              <li><strong>TENAGA AHLI UTAMA DWDM</strong> | Aug. 2016 – Feb. 2021</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 06: PT Terrabit Network Indonesia -->
+        <article class="exp-card reveal-slide">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="exp-index">06 // TELECOM</span>
+              <span class="label-thin">TRANSMISSION &amp; BTS</span>
+            </div>
+            <h3 class="exp-company">PT Terrabit Network Indonesia</h3>
+            <span class="exp-role">DIRECTOR</span>
+            <span class="exp-period">Sep. 2015 – Jul. 2021</span>
+            <p class="body-copy" style="font-size:0.9rem;">
+              Transmission technologies, wireless analysers &amp; BTS revenue assurance.
+            </p>
+          </div>
+        </article>
+
+        <!-- 07: ILSINTECH -->
+        <article class="exp-card reveal-slide">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="exp-index">07 // OPTICAL PRINCIPAL</span>
+              <span class="label-thin">KOREA HQ PRINCIPAL</span>
+            </div>
+            <h3 class="exp-company">ILSINTECH</h3>
+            <span class="exp-role">COUNTRY DIRECTOR</span>
+            <span class="exp-period">May. 2012 – Aug. 2015</span>
+            <p class="body-copy" style="font-size:0.9rem;">
+              Splicer principal &amp; manufacturer. Led national market expansion and carrier adoption.
+            </p>
+          </div>
+        </article>
+
+        <!-- 08: EXFO -->
+        <article class="exp-card reveal-slide">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="exp-index">08 // TEST &amp; MEASUREMENT</span>
+              <span class="label-thin">REGIONAL LEADERSHIP</span>
+            </div>
+            <h3 class="exp-company">EXFO</h3>
+            <span class="exp-role">SENIOR REGIONAL MANAGER</span>
+            <span class="exp-period">Jan. 2011 – Apr. 2012</span>
+            <p class="body-copy" style="font-size:0.9rem;">
+              Test &amp; measurement equipment principal &amp; manufacturer.
+            </p>
+          </div>
+        </article>
+
+        <!-- 09: CommScope -->
+        <article class="exp-card featured-exp reveal-slide">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="exp-index">09 // GLOBAL PRINCIPAL</span>
+              <span class="label-thin">COMMSCOPE / SYSTIMAX / ANDREW</span>
+            </div>
+            <h3 class="exp-company">CommScope</h3>
+            <span class="exp-role">COUNTRY MANAGER &amp; CHIEF REP OFFICER</span>
+            <span class="exp-period">Jan. 2007 – Mar. 2011</span>
+            <p class="body-copy" style="font-size:0.88rem; margin-bottom:8px;">
+              CommScope, SYSTIMAX, Andrew principal &amp; manufacturer.
+            </p>
+            <ul class="sub-role-list">
+              <li><strong>CHIEF REPRESENTATIVE OFFICER</strong> | May 2007 – Mar. 2011</li>
+              <li><strong>COUNTRY MANAGER</strong> | Jan. 2007 – Dec. 2010</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 10: ZTE Corporation -->
+        <article class="exp-card reveal-slide">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="exp-index">10 // CARRIER NEM</span>
+              <span class="label-thin">ACCOUNT LEADERSHIP</span>
+            </div>
+            <h3 class="exp-company">ZTE Corporation</h3>
+            <span class="exp-role">SENIOR ACCOUNT MANAGER</span>
+            <span class="exp-period">Nov. 2003 – Dec. 2006</span>
+            <p class="body-copy" style="font-size:0.9rem;">
+              Network Equipment Manufacturer (NEM).
+            </p>
+          </div>
+        </article>
+
+        <!-- 11: PT Sistem Integra Indonesia -->
+        <article class="exp-card reveal-slide">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="exp-index">11 // ASP EXECUTIVE</span>
+              <span class="label-thin">PRESIDENCY</span>
+            </div>
+            <h3 class="exp-company">PT Sistem Integra Indonesia</h3>
+            <span class="exp-role">PRESIDENT DIRECTOR &amp; DIRECTOR</span>
+            <span class="exp-period">Jun. 2000 – Aug. 2002</span>
+            <p class="body-copy" style="font-size:0.88rem; margin-bottom:8px;">
+              Application Service Provider.
+            </p>
+            <ul class="sub-role-list">
+              <li><strong>DIRECTOR</strong> | May 2002 – Aug. 2002</li>
+              <li><strong>PRESIDENT DIRECTOR</strong> | Jun. 2000 – May 2002</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 12: PT AIT Sigma Indonesia -->
+        <article class="exp-card reveal-slide">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="exp-index">12 // SOFTWARE HOUSE [6 ROLES]</span>
+              <span class="label-thin">FULL-STACK PROGRESSION</span>
+            </div>
+            <h3 class="exp-company">PT AIT Sigma Indonesia</h3>
+            <span class="exp-role">PROGRAMMER → SALES MANAGER</span>
+            <span class="exp-period">Sep. 1996 – May 2000</span>
+            <p class="body-copy" style="font-size:0.86rem; margin-bottom:6px;">Software house (6 rapid promotions):</p>
+            <ul class="sub-role-list">
+              <li><strong>Sales Manager</strong> | Jun. 1999 – May 2000</li>
+              <li><strong>Business Development &amp; Marketing</strong> | Sep. 1998 – Jun. 1999</li>
+              <li><strong>Head of Programmer</strong> | Jan. 1998 – Sep. 1998</li>
+              <li><strong>Senior Application Engineer</strong> | Jul. 1997 – Jan. 1998</li>
+              <li><strong>Network Specialist</strong> | Dec. 1996 – Jul. 1997</li>
+              <li><strong>Programmer</strong> | Sep. 1996 – Dec. 1996</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="corner-safe-zone-bottom reveal-slide">
+      <div class="corner-banner corner-banner-solid-indigo">
+        <span>END-TO-END ICT &amp; INFRASTRUCTURE TENURE</span>
+      </div>
+      <div class="corner-banner corner-banner-solid-amber">
+        <span>NEXT: SKILLS, LANGUAGES &amp; EDUCATION ↓</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 04: SKILLS, EDUCATION, LANGUAGES, INTERESTS & MARTIAL ARTS
+       Spec: Chips never more than 1-2 words per line, thin Montserrat.
+       ======================================================================== -->
+  <section id="sec-matrix" class="full-bleed-field field-secondary">
+    <div class="corner-safe-zone reveal-slide">
+      <div class="corner-banner" style="background:var(--black); color:var(--white); border-color:var(--black);">
+        <span>SECTION 04 // HUMAN CAPITAL &amp; SCHOLASTIC MATRIX</span>
+      </div>
+      <div class="corner-banner" style="background:var(--white); color:var(--black); border-color:var(--black);">
+        <span>TMG SCHOLAR TOKYO // UI JAKARTA &amp; DEPOK</span>
+      </div>
+    </div>
+
+    <div class="centered-stage">
+      <div class="reveal-slide">
+        <span class="hero-wordmark wordmark-white-on-black">skill</span>
+      </div>
+
+      <!-- 11 Core Skills rendered as Strict 1-2 Words/Line Neo-Chips -->
+      <div class="brutalist-box brutalist-box-solid-black reveal-slide reveal-delay-1" style="width:100%; text-align:center;">
+        <div class="label-thin" style="color:var(--amber); margin-bottom:16px;">
+          EXECUTIVE COMPETENCY CHIPS (STRICT 1–2 WORDS PER LINE SPEC)
+        </div>
+        <div class="chip-cluster" style="gap:12px;">
+          <div class="neo-chip" style="border-color:var(--white); color:var(--white);"><span>01 //</span><strong>LEADERSHIP</strong></div>
+          <div class="neo-chip" style="border-color:var(--white); color:var(--white);"><span>02 //</span><strong>BUSINESS</strong></div>
+          <div class="neo-chip" style="border-color:var(--white); color:var(--white);"><span>03 //</span><strong>OPERATION</strong></div>
+          <div class="neo-chip" style="border-color:var(--white); color:var(--white);"><span>04 //</span><strong>PRODUCT<br>MGT.</strong></div>
+          <div class="neo-chip" style="border-color:var(--white); color:var(--white);"><span>05 //</span><strong>NEGOTIATION</strong></div>
+          <div class="neo-chip" style="border-color:var(--white); color:var(--white);"><span>06 //</span><strong>CHANNEL<br>MGT.</strong></div>
+          <div class="neo-chip" style="border-color:var(--white); color:var(--white);"><span>07 //</span><strong>ALLIANCE<br>MGT.</strong></div>
+          <div class="neo-chip" style="border-color:var(--white); color:var(--white);"><span>08 //</span><strong>RELATIONSHIP<br>MGT.</strong></div>
+          <div class="neo-chip" style="border-color:var(--white); color:var(--white);"><span>09 //</span><strong>PROJECT<br>MGT.</strong></div>
+          <div class="neo-chip" style="border-color:var(--white); color:var(--white);"><span>10 //</span><strong>STRATEGIC<br>PARTNER<br>DEV.</strong></div>
+          <div class="neo-chip" style="border-color:var(--white); color:var(--white);"><span>11 //</span><strong>TECHNICAL<br>APTITUDE</strong></div>
+        </div>
+      </div>
+
+      <!-- 2x2 Hard-Edged Matrix: Education, Languages, Honors/Interests, Martial Arts/Hobbies -->
+      <div class="exp-grid reveal-slide reveal-delay-2" style="grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));">
+        <!-- Education & Credentials -->
+        <div class="brutalist-box brutalist-box-solid-white">
+          <span class="status-pill-indigo" style="margin-bottom:12px;">EDUCATION &amp; ACADEMIC CREDENTIALS</span>
+          <h3 class="section-headline" style="font-size:1.9rem; margin-bottom:1rem;">ACADEMIC PEDIGREE</h3>
+
+          <div style="border-top:2px solid var(--black); padding:12px 0;">
+            <div style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:1.05rem;">UNIVERSITAS INDONESIA — Jakarta, Indonesia</div>
+            <div class="body-copy" style="font-size:0.9rem; font-weight:400;">Financial Management (1998 – 2000)</div>
+          </div>
+
+          <div style="border-top:2px solid var(--black); padding:12px 0;">
+            <div style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:1.05rem;">UNIVERSITAS INDONESIA — Depok, Indonesia</div>
+            <div class="body-copy" style="font-size:0.9rem; font-weight:400;">Polytechnic - Industrial Electronics (1993 – 1996)</div>
+          </div>
+
+          <div style="border-top:2px solid var(--black); padding:12px 0;">
+            <div style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:1.05rem;">KUNITACHI KOUKO — Tokyo, Japan</div>
+            <div class="body-copy" style="font-size:0.9rem; font-weight:400;">Senior High School (1991 – 1992)</div>
+            <div class="status-pill-accent" style="margin-top:6px;">* Tokyo Metropolitan Government (TMG) Scholar — Jakarta Sister-City Exchange</div>
+          </div>
+
+          <div style="border-top:2px solid var(--black); padding:12px 0 0;">
+            <div style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:1.05rem;">SDN 02 KELALAR — Bekasi, Indonesia</div>
+            <div class="body-copy" style="font-size:0.9rem; font-weight:400;">Elementary School (1983 – 1986) — <strong>** skipped the 6th grade altogether</strong></div>
+          </div>
+        </div>
+
+        <!-- Languages, Interests, Hobbies & Certifications -->
+        <div class="brutalist-box brutalist-box-solid-paper" style="display:flex; flex-direction:column; justify-content:space-between; gap:1.25rem;">
+          <div>
+            <span class="status-pill-accent" style="margin-bottom:10px;">MULTILINGUAL FLUENCY</span>
+            <h3 class="section-headline" style="font-size:1.75rem; margin-bottom:0.75rem;">LANGUAGES</h3>
+            <ul style="list-style:none; display:grid; gap:8px;" class="body-copy">
+              <li style="border-bottom:1px solid var(--black); padding-bottom:6px;"><strong>Bahasa Indonesia:</strong> native</li>
+              <li style="border-bottom:1px solid var(--black); padding-bottom:6px;"><strong>English:</strong> fluent (TOEFL 633 — Netherlands Education Centre)</li>
+              <li style="border-bottom:1px solid var(--black); padding-bottom:6px;"><strong>Malay:</strong> working knowledge</li>
+              <li style="border-bottom:1px solid var(--black); padding-bottom:6px;"><strong>Japanese:</strong> casually speaking &amp; listening, sufficient reading, barely writing (JLPT Level 2: 1,000 kanji, 6,000 vocabulary words at Tokyo)</li>
+            </ul>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div style="border:2px solid var(--black); padding:14px; background:var(--white);">
+              <span class="status-pill-indigo" style="margin-bottom:8px;">INTERESTS</span>
+              <ul style="list-style:square; padding-left:16px; font-size:0.85rem; line-height:1.55;">
+                <li><strong>Artificial Intelligence</strong></li>
+                <li><strong>Distributed ledger</strong></li>
+                <li><strong>360 photography &amp; videography</strong> (Google Trusted Professional Photographer)</li>
+              </ul>
+            </div>
+
+            <div style="border:2px solid var(--black); padding:14px; background:var(--white);">
+              <span class="status-pill-accent" style="margin-bottom:8px;">HOBBIES &amp; BUDO</span>
+              <ul style="list-style:square; padding-left:16px; font-size:0.85rem; line-height:1.55;">
+                <li><strong>Golf</strong></li>
+                <li><strong>Cross country mountain biking</strong></li>
+                <li><strong>Martial arts:</strong> Judo (black belt), Karate (black belt), Kendo (swordsmanship) &amp; Kyudo (traditional archery)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="border:2px solid var(--black); padding:14px; background:var(--black); color:var(--white); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <div>
+              <span class="status-pill-accent">HONORS &amp; CERTIFICATIONS</span>
+              <div style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:0.95rem; margin-top:4px;">
+                Certified Data Center Professional (CDCP) — EPI (2008)
+              </div>
+              <div style="font-size:0.82rem;">Strategic &amp; Conceptual Selling — Miller Heimann (2007)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="corner-safe-zone-bottom reveal-slide">
+      <div class="corner-banner" style="background:var(--black); color:var(--white); border-color:var(--black);">
+        <span>JUDO &amp; KARATE BLACK BELT // KENDO &amp; KYUDO</span>
+      </div>
+      <div class="corner-banner" style="background:var(--white); color:var(--black); border-color:var(--black);">
+        <span>NEXT: COMPLETE 64-CREDENTIAL LEDGER ↓</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 05: COMPLETE 64-ITEM CERTIFICATIONS, AWS/AI & ENGINEERING ARCHIVE
+       ======================================================================== -->
+  <section id="sec-certs" class="full-bleed-field field-black">
+    <div class="corner-safe-zone reveal-slide">
+      <div class="corner-banner corner-banner-solid-amber">
+        <span>VERIFIED CONTINUOUS LEARNING // 1992 — 2026</span>
+      </div>
+      <div class="chip-cluster">
+        <span class="neo-chip">AWS AI/ML<br>2026</span>
+        <span class="neo-chip">CLAUDE<br>CODE 2025</span>
+        <span class="neo-chip">EXFO &amp;<br>SYSTIMAX</span>
+      </div>
+      <div class="corner-banner corner-banner-solid-indigo">
+        <span id="certCountBadge">SHOWING: ALL 64 CREDENTIALS</span>
+      </div>
+    </div>
+
+    <div class="centered-stage">
+      <div class="reveal-slide">
+        <span class="hero-wordmark wordmark-white-on-black">cred</span>
+      </div>
+
+      <div class="reveal-slide reveal-delay-1">
+        <h2 class="section-headline" style="color:var(--amber);">
+          CERTIFICATIONS, LICENSES &amp; TECHNICAL TRAINING ARCHIVE
+        </h2>
+        <div class="filter-strip" role="group" aria-label="Filter Credentials">
+          <button class="filter-btn active" data-filter="all" type="button">ALL [64]</button>
+          <button class="filter-btn" data-filter="ai" type="button">AI, AWS &amp; BEDROCK (2025–2026) [8]</button>
+          <button class="filter-btn" data-filter="optical" type="button">OPTICAL, DWDM &amp; LTE (2011–2013) [10]</button>
+          <button class="filter-btn" data-filter="dc" type="button">COMMSCOPE &amp; SYSTIMAX DC (2007–2010) [18]</button>
+          <button class="filter-btn" data-filter="ethics" type="button">GOVERNANCE &amp; COMPLIANCE (2007–2010) [13]</button>
+          <button class="filter-btn" data-filter="foundational" type="button">FOUNDATIONAL &amp; HONORS (1992–2006) [15]</button>
+        </div>
+      </div>
+
+      <div id="certLedger" class="cert-ledger reveal-slide reveal-delay-2"></div>
+    </div>
+
+    <div class="corner-safe-zone-bottom reveal-slide">
+      <div class="corner-banner">
+        <span>34 YEARS OF CONTINUOUS TECHNICAL ACCREDITATION</span>
+      </div>
+      <div class="corner-banner corner-banner-solid-amber">
+        <span>FINAL MODULE: DIRECT CONTACT &amp; QR ↓</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 06: CONTACTS & VECTOR QR / POLYTOPE TERMINAL
+       ======================================================================== -->
+  <section id="sec-contact" class="full-bleed-field field-paper">
+    <div class="corner-safe-zone reveal-slide">
+      <div class="corner-banner corner-banner-solid-indigo">
+        <span>DIRECT DISPATCH // JAKARTA &amp; SYDNEY</span>
+      </div>
+      <div class="chip-cluster">
+        <span class="neo-chip">INDONESIA<br>PERMIT</span>
+        <span class="neo-chip">JAPAN<br>PERMIT</span>
+        <span class="neo-chip">OPEN TO<br>RELOCATE</span>
+      </div>
+      <div class="corner-banner corner-banner-solid-amber">
+        <span>CASTASTOR@GMAIL.COM</span>
+      </div>
+    </div>
+
+    <div class="centered-stage">
+      <div class="reveal-slide">
+        <span class="hero-wordmark wordmark-black-on-paper">sign</span>
+      </div>
+
+      <div class="reveal-slide reveal-delay-1" style="width:100%;">
+        <h2 class="section-headline">CONTACTS &amp; DIRECT CHANNELS</h2>
+
+        <div class="contact-console">
+          <div class="contact-details-pane">
+            <div>
+              <span class="status-pill-indigo" style="margin-bottom:12px;">EXECUTIVE COMMUNICATIONS</span>
+              <h3 style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:2rem; text-transform:uppercase; line-height:1;">
+                YONGKY JOYODININGRAT
+              </h3>
+              <p class="label-thin" style="margin-top:6px; font-weight:600;">
+                INTRAPRENEUR &amp; CONSULTANT // FOUNDER @ CAST/|SOFT
+              </p>
+
+              <!-- Email -->
+              <div class="contact-line" style="margin-top:1.5rem;">
+                <div class="glyph-square" aria-hidden="true">✉</div>
+                <div>
+                  <div class="label-thin" style="font-weight:600;">ELECTRONIC MAIL</div>
+                  <a href="mailto:castastor@gmail.com" style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:1.25rem; color:var(--black); text-decoration:none;">
+                    castastor@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <!-- Phones -->
+              <div class="contact-line">
+                <div class="glyph-square" aria-hidden="true">✆</div>
+                <div>
+                  <div class="label-thin" style="font-weight:600;">DIRECT TELEPHONY (3 ACTIVE LINES)</div>
+                  <div style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:1.1rem; line-height:1.45;">
+                    <a href="tel:+62818715599" style="color:var(--black); text-decoration:none;">+62 818 71 5599</a><br>
+                    <a href="tel:+628159715599" style="color:var(--black); text-decoration:none;">+62 815 9 71 5599</a><br>
+                    <a href="tel:+6282281815599" style="color:var(--black); text-decoration:none;">+62 822 8181 5599</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Locations -->
+              <div class="contact-line" style="border-bottom:none;">
+                <div class="glyph-square" aria-hidden="true">⌖</div>
+                <div>
+                  <div class="label-thin" style="font-weight:600;">OPERATIONAL BASES</div>
+                  <div class="body-copy" style="font-weight:600; font-size:0.95rem; margin-top:4px;">
+                    • Lower North Quarter<br>
+                    • A#3A Cluster Magnolia Taman Jatisari Permai Jatiasih Greater Jakarta 17426 ID
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; flex-wrap:wrap; gap:10px;">
+              <button id="copyContactBtn" type="button" class="face-toggle-btn" style="border-color:var(--black);">
+                <span>COPY FULL CONTACT CARD</span>
+              </button>
+              <button id="printDossierBtn" type="button" class="nav-btn" style="border:2px solid var(--black); padding:10px 16px; font-weight:600;">
+                <span>PRINT / EXPORT PDF</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Pane: Crisp Neo-Brutalist Blue Dot QR + Polytope Center Emblem -->
+          <div class="contact-qr-pane">
+            <div style="border:3px solid var(--black); background:var(--white); padding:18px;">
+              <svg id="qrPolytopeSvg" width="240" height="240" viewBox="0 0 240 240" aria-label="Yongky Joyodiningrat QR Code with Geometric Polytope Center"></svg>
+            </div>
+            <span class="label-thin" style="font-weight:600; text-align:center;">
+              SCAN OR CLICK COPY // DIRECT VCARD PAYLOAD
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="corner-safe-zone-bottom reveal-slide">
+      <div class="corner-banner corner-banner-solid-indigo">
+        <span>NEO-BRUTALIST SINGLE-FILE EDITION // ZERO GRADIENTS</span>
+      </div>
+      <a href="#sec-hero" class="corner-banner corner-banner-solid-amber" style="text-decoration:none;">
+        <span>RETURN TO TOP ↑</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SCRIPTS:
+       1. Polytope / Complete-Graph SVG Generator (Resume's Geometric Mandala)
+       2. Interactive Dark UI Subsystem Switcher
+       3. Complete 64-Item Credential Archive & Filter
+       4. Scroll-Linked Mechanical Slide Reveal
+       5. Interchangeable Palette Face Switcher (#303188 ↔ #FAA61A)
+       ======================================================================== -->
+  <script>
+    (function () {
+      /* 1. PALETTE FACE SWITCHER (#303188 ↔ #FAA61A) */
+      const htmlEl = document.documentElement;
+      const faceBtn = document.getElementById('faceToggleBtn');
+      const faceLabel = document.getElementById('faceLabel');
+
+      faceBtn.addEventListener('click', function () {
+        const current = htmlEl.getAttribute('data-face');
+        const next = current === 'indigo' ? 'amber' : 'indigo';
+        htmlEl.setAttribute('data-face', next);
+        faceLabel.textContent = next === 'indigo'
+          ? 'FACE: #303188 / #FAA61A'
+          : 'FACE: #FAA61A / #303188';
+      });
+
+      /* 2. MATHEMATICAL POLYTOPE CHORD GENERATOR (Recreating the Resume's E8/Polytope Graph in Crisp Vector Lines) */
+      function renderPolytope(svgEl, strokePrimary, strokeSecondary, nodeFill) {
+        if (!svgEl) return;
+        const cx = 300, cy = 300;
+        const outerR = 275;
+        const midR = 195;
+        const innerR = 110;
+        const n = 24;
+        const ptsOuter = [];
+        const ptsMid = [];
+
+        for (let i = 0; i < n; i++) {
+          const angle = (i * 2 * Math.PI) / n;
+          ptsOuter.push({
+            x: (cx + outerR * Math.cos(angle)).toFixed(1),
+            y: (cy + outerR * Math.sin(angle)).toFixed(1)
+          });
+          const angleMid = angle + Math.PI / n;
+          ptsMid.push({
+            x: (cx + midR * Math.cos(angleMid)).toFixed(1),
+            y: (cy + midR * Math.sin(angleMid)).toFixed(1)
+          });
+        }
+
+        let markup = '';
+        // Chords connecting outer ring vertices
+        for (let i = 0; i < n; i++) {
+          for (let step of [3, 5, 7, 9, 11]) {
+            const j = (i + step) % n;
+            const color = step % 2 === 1 ? strokePrimary : strokeSecondary;
+            markup += `<line x1="${ptsOuter[i].x}" y1="${ptsOuter[i].y}" x2="${ptsOuter[j].x}" y2="${ptsOuter[j].y}" stroke="${color}" stroke-width="1" />`;
+          }
+          // Connect outer to mid ring
+          for (let step of [0, 2, 5, 19, 22]) {
+            const j = (i + step) % n;
+            markup += `<line x1="${ptsOuter[i].x}" y1="${ptsOuter[i].y}" x2="${ptsMid[j].x}" y2="${ptsMid[j].y}" stroke="${strokeSecondary}" stroke-width="0.85" />`;
+          }
+        }
+
+        // Concentric crisp geometric rings
+        markup += `<circle cx="${cx}" cy="${cy}" r="${outerR}" fill="none" stroke="${strokePrimary}" stroke-width="2" />`;
+        markup += `<circle cx="${cx}" cy="${cy}" r="${midR}" fill="none" stroke="${strokeSecondary}" stroke-width="1.5" />`;
+        markup += `<circle cx="${cx}" cy="${cy}" r="${innerR}" fill="none" stroke="${strokePrimary}" stroke-width="1.5" />`;
+        markup += `<circle cx="${cx}" cy="${cy}" r="18" fill="none" stroke="${nodeFill}" stroke-width="2" />`;
+
+        // Crisp square vertex glyphs on outer & middle rings
+        for (let i = 0; i < n; i++) {
+          markup += `<rect x="${ptsOuter[i].x - 3.5}" y="${ptsOuter[i].y - 3.5}" width="7" height="7" fill="${nodeFill}" />`;
+          markup += `<rect x="${ptsMid[i].x - 2.5}" y="${ptsMid[i].y - 2.5}" width="5" height="5" fill="${strokePrimary}" />`;
+        }
+
+        svgEl.innerHTML = markup;
+      }
+
+      renderPolytope(document.getElementById('heroPolytope'), '#FAA61A', '#303188', '#FFFFFF');
+      document.querySelectorAll('[data-polytope="secondary"]').forEach(el => {
+        renderPolytope(el, '#FFFFFF', '#FAA61A', '#FAA61A');
+      });
+      document.querySelectorAll('[data-polytope="ink"]').forEach(el => {
+        renderPolytope(el, '#303188', '#000000', '#FAA61A');
+      });
+
+      /* 3. DOT-MATRIX QR + CENTRAL POLYTOPE EMBLEM (Matching the Resume's Blue Dot QR Graphic) */
+      function renderQrWithPolytope() {
+        const svg = document.getElementById('qrPolytopeSvg');
+        if (!svg) return;
+        const grid = 21;
+        const cell = 240 / grid;
+        let out = `<rect width="240" height="240" fill="#FFFFFF"/>`;
+
+        function isFinder(r, c) {
+          return (r < 7 && c < 7) || (r < 7 && c >= grid - 7) || (r >= grid - 7 && c < 7);
+        }
+
+        function isCenterEmblem(r, c) {
+          const dr = r - 10, dc = c - 10;
+          return (dr * dr + dc * dc) <= 13;
+        }
+
+        // Draw 3 crisp Neo-Brutalist finder targets in #303188
+        const finders = [[0, 0], [0, grid - 7], [grid - 7, 0]];
+        finders.forEach(([fr, fc]) => {
+          const x = fc * cell + 3.5 * cell;
+          const y = fr * cell + 3.5 * cell;
+          out += `<circle cx="${x}" cy="${y}" r="${3.1 * cell}" fill="none" stroke="#303188" stroke-width="${cell * 0.85}" />`;
+          out += `<circle cx="${x}" cy="${y}" r="${1.35 * cell}" fill="#303188" />`;
+        });
+
+        // Deterministic dot matrix around the center polytope
+        for (let r = 0; r < grid; r++) {
+          for (let c = 0; c < grid; c++) {
+            if (isFinder(r, c) || isCenterEmblem(r, c)) continue;
+            const hash = ((r * 37 + c * 19 + r * c * 7) % 11);
+            if (hash < 6) {
+              const cx = (c + 0.5) * cell;
+              const cy = (r + 0.5) * cell;
+              out += `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${(cell * 0.43).toFixed(1)}" fill="#303188" />`;
+            }
+          }
+        }
+
+        // Central geometric polytope emblem
+        const mCx = 120, mCy = 120, mR = 36, mN = 16;
+        const mPts = [];
+        for (let i = 0; i < mN; i++) {
+          const a = (i * 2 * Math.PI) / mN;
+          mPts.push({ x: mCx + mR * Math.cos(a), y: mCy + mR * Math.sin(a) });
+        }
+        for (let i = 0; i < mN; i++) {
+          for (let s of [3, 5, 7]) {
+            const j = (i + s) % mN;
+            out += `<line x1="${mPts[i].x.toFixed(1)}" y1="${mPts[i].y.toFixed(1)}" x2="${mPts[j].x.toFixed(1)}" y2="${mPts[j].y.toFixed(1)}" stroke="${s === 5 ? '#FAA61A' : '#303188'}" stroke-width="0.9" />`;
+          }
+        }
+        out += `<circle cx="120" cy="120" r="${mR}" fill="none" stroke="#000000" stroke-width="1.5" />`;
+        out += `<circle cx="120" cy="120" r="6" fill="#FAA61A" stroke="#000000" stroke-width="1.5" />`;
+        svg.innerHTML = out;
+      }
+      renderQrWithPolytope();
+
+      /* 4. DARK UI DEMO: 5 INFRASTRUCTURE PILLARS INTERACTIVE DATA */
+      const pillars = {
+        power: {
+          code: 'SYS-01 // MV/LV GRID TO RACK',
+          badge: 'REDUNDANT N+1 / 2N',
+          title: 'Power Infrastructure & Substation Integration',
+          desc: 'Led electrical infrastructure projects from grid interconnection to rack-level distribution, commissioned medium-voltage substations and backup power systems for Bank Indonesia, CNOOC and Donggi Senoro LNG. Experience in low-voltage distribution, and integration with on-site generation for mission-critical facilities.',
+          clients: ['BANK INDONESIA', 'CNOOC', 'DONGGI SENORO LNG', 'PLN UNGARAN']
+        },
+        dwdm: {
+          code: 'SYS-02 // OPTICAL & GPU FABRIC',
+          badge: 'ULTRA-LOW LATENCY DWDM',
+          title: 'High-Speed Interconnect & DWDM Architecture',
+          desc: 'Oversaw fiber optic backbone and DWDM transmission systems built up for carrier and enterprise networks at BAKTI’s Palapa Ring Barat & Tengah, UOB Buana and Bank Danamon, for capacity scaling, and latency optimization to support high-density compute workloads including distributed GPU training and real-time data replication.',
+          clients: ['BAKTI PALAPA RING BARAT & TENGAH', 'UOB BUANA', 'BANK DANAMON']
+        },
+        thermal: {
+          code: 'SYS-03 // PRECISION CHILLERS & CONTAINMENT',
+          badge: '40KW+ PER RACK DENSITY',
+          title: 'Thermal Engineering: HVAC, Chillers & Containment',
+          desc: 'Implemented precision cooling solutions across diverse environmental conditions. Water-cooled chiller plants for Semen Gresik, Alstom, and Chevron Texaco / Unocal. Developed hot-aisle/cold-aisle containment strategies and modular container data center solutions for United Tractors, Astra, Meratus Line, and Talisman, addressing thermal management for densities exceeding 40kW per rack.',
+          clients: ['SEMEN GRESIK', 'ALSTOM', 'CHEVRON TEXACO / UNOCAL', 'UNITED TRACTORS', 'ASTRA', 'MERATUS LINE', 'TALISMAN']
+        },
+        mmr: {
+          code: 'SYS-04 // TIER-II & TIER-III BUILD-OUT',
+          badge: 'UPTIME INSTITUTE COMPLIANT',
+          title: 'Main Machine Room (MMR) & Modular Deployment',
+          desc: 'Main machine room build-outs for Tier-II/III facilities at Sigma, Citibank, Credit Suisse, Standard Chartered, and Rabobank. Projects encompassed raised floor systems, modular prefabricated data centers, fire suppression integration, and physical security zoning—ensuring compliance with Uptime Institute and local regulatory standards.',
+          clients: ['SIGMA', 'CITIBANK', 'CREDIT SUISSE', 'STANDARD CHARTERED', 'RABOBANK']
+        },
+        bms: {
+          code: 'SYS-05 // CENTRALIZED SCADA & 24/7 NOC',
+          badge: 'PREDICTIVE TELEMETRY',
+          title: 'Building Management Systems (BMS)',
+          desc: 'Deployed integrated BMS platforms unifying power monitoring, cooling optimization, and security at Siemens Arkadia. Systems provided centralized SCADA visibility, predictive maintenance workflows, and alarm escalation for 24/7 NOC operations.',
+          clients: ['SIEMENS ARKADIA', '24/7 NOC SCADA', 'PREDICTIVE MAINTENANCE']
+        }
+      };
+
+      const tabBtns = document.querySelectorAll('.dark-ui-tab');
+      const pillarCode = document.getElementById('pillarCode');
+      const pillarMetricBadge = document.getElementById('pillarMetricBadge');
+      const pillarTitle = document.getElementById('pillarTitle');
+      const pillarDesc = document.getElementById('pillarDesc');
+      const pillarClients = document.getElementById('pillarClients');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          const key = this.getAttribute('data-pillar');
+          const data = pillars[key];
+          if (!data) return;
+          pillarCode.textContent = data.code;
+          pillarMetricBadge.textContent = data.badge;
+          pillarTitle.textContent = data.title;
+          pillarDesc.textContent = data.desc;
+          pillarClients.innerHTML = data.clients
+            .map(c => `<span class="status-pill-indigo">${c}</span>`)
+            .join('');
+        });
+      });
+
+      /* 5. COMPLETE 64-ITEM CREDENTIAL ARCHIVE (UNABRIDGED FROM RESUME) */
+      const credentials = [
+        // 2025 - 2026 AI & Cloud (8)
+        { year: '2026', title: 'AWS Automating with AI/ML for Small Business Owners', cat: 'ai' },
+        { year: '2026', title: 'AWS Sustainability Strategies with Generative AI', cat: 'ai' },
+        { year: '2026', title: 'Domain 3 Review: AWS Certified Machine Learning (MLA-C01 - English)', cat: 'ai' },
+        { year: '2026', title: 'Domain 4 Review: AWS Certified Generative AI Developer - Professional (AIP-C01 - English)', cat: 'ai' },
+        { year: '2026', title: 'Generative AI for Executives', cat: 'ai' },
+        { year: '2026', title: 'Building Generative AI Applications Using Amazon Bedrock', cat: 'ai' },
+        { year: '2025', title: 'Claude 101', cat: 'ai' },
+        { year: '2025', title: 'Claude Code 101', cat: 'ai' },
+
+        // 2011 - 2013 Optical, DWDM & Wireless (10)
+        { year: '2013', title: 'ILSINTECH: Fusion Splicer', cat: 'optical' },
+        { year: '2012', title: 'EXFO: LTE Overview', cat: 'optical' },
+        { year: '2012', title: 'EXFO: 3G Wireless Overview', cat: 'optical' },
+        { year: '2012', title: 'EXFO: Wireless Network', cat: 'optical' },
+        { year: '2012', title: 'EXFO: EtherSAM', cat: 'optical' },
+        { year: '2012', title: 'EXFO: Dispersion Essentials', cat: 'optical' },
+        { year: '2012', title: 'EXFO: Polarization Mode Dispersion', cat: 'optical' },
+        { year: '2011', title: 'EXFO: MPLS Switching', cat: 'optical' },
+        { year: '2011', title: 'EXFO: WDM 101', cat: 'optical' },
+        { year: '2011', title: 'EXFO: In-band OSNR Measurement', cat: 'optical' },
+
+        // 2007 - 2010 CommScope, SYSTIMAX & Data Center (18)
+        { year: '2010', title: 'CommScope SP4410: OSP Fiber Design and Engineering', cat: 'dc' },
+        { year: '2010', title: 'SYSTIMAX SP5502: iPatch Sales and Marketing', cat: 'dc' },
+        { year: '2010', title: 'SYSTIMAX SP3341R: SCS Installation & Maintenance', cat: 'dc' },
+        { year: '2010', title: 'SYSTIMAX SP3321R: SCS Design & Engineering', cat: 'dc' },
+        { year: '2010', title: 'CommScope SP4400: Enterprise Fiber Solutions', cat: 'dc' },
+        { year: '2010', title: 'CommScope SPCCCS: Coax Cable Solutions', cat: 'dc' },
+        { year: '2010', title: 'CommScope SP6300: Cabling for In-Building Wireless', cat: 'dc' },
+        { year: '2010', title: 'SYSTIMAX SP8800: Data Center Design & Engineering Specialist', cat: 'dc' },
+        { year: '2010', title: 'SYSTIMAX SP3360: 360 Solutions', cat: 'dc' },
+        { year: '2009', title: 'SYSTIMAX SP3321: SCS Design & Engineering', cat: 'dc' },
+        { year: '2009', title: 'SYSTIMAX SP5500: SCS iPatch RTIM Design & Engineering', cat: 'dc' },
+        { year: '2008', title: 'Certified Data Center Professional (CDCP) — EPI', cat: 'dc' },
+        { year: '2008', title: 'SYSTIMAX SP5602: Sales Solutions', cat: 'dc' },
+        { year: '2008', title: 'SYSTIMAX SP3300: Overview', cat: 'dc' },
+        { year: '2007', title: 'SYSTIMAX ND5510: iPatch RTIM Support Specialist', cat: 'dc' },
+        { year: '2007', title: 'SYSTIMAX ND3341: SCS Installation & Maintenance', cat: 'dc' },
+        { year: '2007', title: 'SYSTIMAX ND3321: SCS Design & Engineering', cat: 'dc' },
+        { year: '2007', title: 'SYSTIMAX ND3321: SCS Design & Engineering at Bangkok, Thailand', cat: 'dc' },
+
+        // 2007 - 2010 Governance, Security & Compliance (13)
+        { year: '2010', title: 'Integrity at Work: Code of Ethics and Business Conduct', cat: 'ethics' },
+        { year: '2009', title: 'Integrity at Work: Confidentiality', cat: 'ethics' },
+        { year: '2009', title: 'Integrity at Work: Financial Integrity', cat: 'ethics' },
+        { year: '2009', title: 'Integrity at Work: Antitrust', cat: 'ethics' },
+        { year: '2009', title: 'inspired eLearning: Basic Security Awareness', cat: 'ethics' },
+        { year: '2008', title: 'Integrity at Work: Intellectual Property', cat: 'ethics' },
+        { year: '2008', title: 'Integrity at Work: Foreign Corrupt Practices Act', cat: 'ethics' },
+        { year: '2008', title: 'Integrity at Work: Information Protection', cat: 'ethics' },
+        { year: '2008', title: 'Integrity at Work: Conflicts of Interest and Gifts', cat: 'ethics' },
+        { year: '2008', title: 'Integrity at Work: Financial Integrity (2008)', cat: 'ethics' },
+        { year: '2007', title: 'Integrity at Work: Information and Brand Protection', cat: 'ethics' },
+        { year: '2007', title: 'Integrity at Work: Respect and Responsibility', cat: 'ethics' },
+        { year: '2007', title: 'Integrity at Work: Insider Trading', cat: 'ethics' },
+
+        // 1992 - 2007 Foundational Engineering, Strategy & Honors (15)
+        { year: '2007', title: 'Strategic & Conceptual Selling — Miller Heimann', cat: 'foundational' },
+        { year: '2006', title: 'TELKOM CIQS 2000 : 2002: TELKOM’s Quality Management System', cat: 'foundational' },
+        { year: '2003', title: 'IATSS Forum: International exchange platform for young professionals in Southeast Asia at Suzuka, Japan', cat: 'foundational' },
+        { year: '2003', title: 'Netherlands Education Centre: TOEFL 633', cat: 'foundational' },
+        { year: '2002', title: 'Progress Software: Version 9 GUI Programming', cat: 'foundational' },
+        { year: '2001', title: 'Bumi Arasy: Team Building Challenge', cat: 'foundational' },
+        { year: '2001', title: 'Brainbench: Programmer/Analyst Aptitude', cat: 'foundational' },
+        { year: '2001', title: 'Brainbench: Development Process', cat: 'foundational' },
+        { year: '2001', title: 'Brainbench: Computer Industry Knowledge', cat: 'foundational' },
+        { year: '2001', title: 'Brainbench: Internet Industry Knowledge', cat: 'foundational' },
+        { year: '1997', title: 'Borland Authorized Training Center: Delphi 3.0 training', cat: 'foundational' },
+        { year: '1996', title: 'Science and Technology Seminar: The Internet', cat: 'foundational' },
+        { year: '1996', title: 'Programmable Logic Control Seminar', cat: 'foundational' },
+        { year: '1996', title: 'Academic Studies in The Netherlands', cat: 'foundational' },
+        { year: '1994', title: 'Fiber Optic Communication Technology Seminar', cat: 'foundational' },
+        { year: '1993', title: 'National Police Headquarters: Basic Training of Military Skill', cat: 'foundational' },
+        { year: '1992', title: 'Japanese Language Proficiency Level 2: 1,000 kanji characters, 6,000 vocabulary words at Tokyo, Japan', cat: 'foundational' }
+      ];
+
+      const certLedger = document.getElementById('certLedger');
+      const certCountBadge = document.getElementById('certCountBadge');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+
+      function renderCerts(filter) {
+        const list = filter === 'all'
+          ? credentials
+          : credentials.filter(item => item.cat === filter);
+
+        certCountBadge.textContent = `SHOWING: ${list.length} CREDENTIALS`;
+        certLedger.innerHTML = list.map((item, idx) => `
+          <div class="cert-row">
+            <span style="font-size:0.84rem; font-weight:400; line-height:1.35;">
+              <strong style="font-family:'Open Sans',sans-serif; font-weight:800; margin-right:6px;">#${String(idx + 1).padStart(2, '0')}</strong>
+              ${item.title}
+            </span>
+            <span class="cert-year">${item.year}</span>
+          </div>
+        `).join('');
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          renderCerts(this.getAttribute('data-filter'));
+        });
+      });
+
+      renderCerts('all');
+
+      /* 6. SCROLLING REVEAL: EVERY SECTION & BLOCK SLIDES AS GOING DOWN */
+      const revealEls = document.querySelectorAll('.reveal-slide');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          } else if (entry.boundingClientRect.top > 0) {
+            // Re-arm slide animation when scrolling back up so scrolling down always slides in
+            entry.target.classList.remove('in-view');
+          }
+        });
+      }, { threshold: 0.08 });
+
+      revealEls.forEach(el => observer.observe(el));
+
+      /* 7. CONTACT UTILITIES */
+      const copyBtn = document.getElementById('copyContactBtn');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function () {
+          const text = [
+            'Yongky JOYODININGRAT — INTRAPRENEUR & CONSULTANT',
+            'Founder & Forward Deployed Officer @ CAST/|SOFT',
+            'Email: castastor@gmail.com',
+            'Tel: +62 818 71 5599 | +62 815 9 71 5599 | +62 822 8181 5599',
+            'Locations: Lower North Quarter | A#3A Cluster Magnolia Taman Jatisari Permai Jatiasih Greater Jakarta 17426 ID',
+            'Working Permit: Indonesia & Japan (Relocation is plausible)'
+          ].join('\n');
+          navigator.clipboard.writeText(text).then(() => {
+            const span = copyBtn.querySelector('span');
+            const orig = span.textContent;
+            span.textContent = 'COPIED TO CLIPBOARD ✓';
+            setTimeout(() => { span.textContent = orig; }, 2000);
+          });
+        });
+      }
+
+      const printBtn = document.getElementById('printDossierBtn');
+      if (printBtn) {
+        printBtn.addEventListener('click', () => window.print());
+      }
+    })();
+  </script>
+</body>
+</html>
