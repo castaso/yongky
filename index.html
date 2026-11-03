@@ -80,7 +80,7 @@
       font-family: 'Open Sans', sans-serif;
       font-weight: 800;
       text-transform: lowercase;
-      font-size: clamp(4.2rem, 16.5vw, 19rem);
+      font-size: clamp(2.05rem, 10.4vw, 19rem);
       line-height: 0.82;
       letter-spacing: -0.055em;
       display: block;
@@ -90,6 +90,8 @@
       padding: 0.15em 0;
       position: relative;
       z-index: 3;
+      max-width: 100%;
+      overflow-wrap: anywhere;
     }
 
     .wordmark-white-on-black {
@@ -122,10 +124,12 @@
       font-family: 'Open Sans', sans-serif;
       font-weight: 800;
       text-transform: uppercase;
-      font-size: clamp(1.85rem, 5.8vh, 4.2rem);
+      font-size: clamp(1.35rem, 5.8vh, 4.2rem);
       line-height: 0.94;
       letter-spacing: -0.025em;
       margin-bottom: 1.5rem;
+      overflow-wrap: anywhere;
+      max-width: 100%;
     }
 
     .body-copy {
@@ -187,20 +191,24 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 48px;
+      min-height: 48px;
+      height: auto;
       background-color: var(--black);
       border-bottom: 2px solid var(--white);
       z-index: 100;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 16px;
+      padding: 8px 16px;
+      gap: 10px;
     }
 
     .command-brand {
       display: flex;
       align-items: center;
       gap: 12px;
+      min-width: 0;
+      flex-shrink: 1;
     }
 
     .status-square {
@@ -259,6 +267,8 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-shrink: 1;
+      min-width: 0;
     }
 
     .face-toggle-btn:hover {
@@ -336,6 +346,7 @@
     .full-bleed-field {
       width: 100%;
       min-height: 100vh;
+      min-height: 100dvh;
       padding: 96px 5vw 84px;
       display: flex;
       flex-direction: column;
@@ -343,6 +354,7 @@
       align-items: center;
       position: relative;
       overflow: hidden;
+      overflow-x: hidden;
       border-bottom: 4px solid var(--black);
     }
 
@@ -388,6 +400,12 @@
       position: relative;
       z-index: 3;
       gap: 2.5rem;
+      min-width: 0;
+    }
+
+    .centered-stage > * {
+      max-width: 100%;
+      min-width: 0;
     }
 
     /* Scrolling Reveal: Every section & block slides up mechanically on scroll down */
@@ -487,6 +505,8 @@
       background-color: transparent;
       text-align: left;
       position: relative;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .brutalist-box-solid-black {
@@ -510,9 +530,10 @@
     /* Experience Timeline Matrix */
     .exp-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
       gap: 20px;
       width: 100%;
+      min-width: 0;
     }
 
     .exp-card {
@@ -525,6 +546,8 @@
       justify-content: space-between;
       text-align: left;
       position: relative;
+      min-width: 0;
+      max-width: 100%;
       transition: transform 0.15s steps(2), background-color 0.15s steps(2);
     }
 
@@ -576,6 +599,8 @@
       color: var(--white);
       display: inline-block;
       margin-bottom: 8px;
+      max-width: 100%;
+      white-space: normal;
     }
 
     .featured-exp .exp-role {
@@ -633,6 +658,7 @@
       border-bottom: 1px solid var(--white);
       flex-wrap: wrap;
       gap: 12px;
+      min-width: 0;
     }
 
     .dark-ui-tabs {
@@ -735,8 +761,9 @@
     /* Client Sector Matrix inside Dark UI */
     .sector-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
       width: 100%;
+      min-width: 0;
     }
 
     .sector-cell {
@@ -780,9 +807,10 @@
     .cert-ledger {
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
       gap: 10px;
       text-align: left;
+      min-width: 0;
     }
 
     .cert-row {
@@ -850,6 +878,12 @@
       gap: 16px;
       padding: 12px 0;
       border-bottom: 2px solid var(--black);
+      min-width: 0;
+    }
+
+    .contact-line > div:last-child {
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .glyph-square {
@@ -864,18 +898,192 @@
       border: 2px solid var(--black);
     }
 
+    .matrix-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .exp-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .dark-ui-console,
+    .contact-console,
+    .white-ui-panel,
+    .cert-row {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .cert-row span:first-child {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .body-copy,
+    .label-thin,
+    .corner-banner,
+    .exp-company,
+    .exp-role {
+      overflow-wrap: anywhere;
+      max-width: 100%;
+    }
+
+    img, svg, video, canvas {
+      max-width: 100%;
+      height: auto;
+    }
+
     @media (max-width: 900px) {
+      .full-bleed-field {
+        min-height: 0;
+        padding: 72px 4.5vw 48px;
+        justify-content: flex-start;
+        gap: 1.5rem;
+      }
+
+      .centered-stage {
+        gap: 1.5rem;
+      }
+
+      .hero-wordmark {
+        font-size: clamp(1.5rem, 8.2vw, 3.4rem);
+        line-height: 0.88;
+        letter-spacing: -0.04em;
+        word-break: break-word;
+        width: 100%;
+      }
+
+      .wordmark-white-on-black,
+      .wordmark-black-on-paper {
+        padding: 0.08em 0.1em 0.12em;
+        max-width: 100%;
+      }
+
+      .section-headline {
+        font-size: clamp(1.2rem, 7vw, 2.1rem);
+        line-height: 1.05;
+        margin-bottom: 1rem;
+      }
+
+      .body-copy {
+        font-size: clamp(0.88rem, 3.6vw, 1.05rem);
+      }
+
+      .corner-safe-zone,
+      .corner-safe-zone-bottom {
+        padding: 0;
+        gap: 10px;
+      }
+
+      .corner-banner {
+        font-size: 0.58rem;
+        letter-spacing: 0.08em;
+        padding: 5px 8px;
+        max-width: 100%;
+      }
+
       .dark-ui-body,
-      .contact-console {
+      .contact-console,
+      .matrix-split {
         grid-template-columns: 1fr;
       }
+
       .dark-ui-hairline-cell,
       .contact-details-pane {
         border-right: none;
         border-bottom: 2px solid currentColor;
+        padding: 16px;
       }
+
+      .contact-qr-pane,
+      .brutalist-box,
+      .exp-card {
+        padding: 1.1rem;
+      }
+
       .nav-links {
         display: none;
+      }
+
+      .top-command-bar {
+        padding: 8px 10px;
+        gap: 8px;
+      }
+
+      .command-brand .label-thin {
+        font-size: 0.58rem;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .face-toggle-btn {
+        padding: 5px 8px;
+        font-size: 0.58rem;
+        letter-spacing: 0.06em;
+        gap: 6px;
+      }
+
+      .exp-grid,
+      .cert-ledger,
+      .sector-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dark-ui-tab {
+        padding: 10px 12px;
+        font-size: 0.64rem;
+        letter-spacing: 0.08em;
+        flex: 1 1 auto;
+      }
+
+      .filter-btn {
+        padding: 7px 10px;
+        font-size: 0.62rem;
+        letter-spacing: 0.08em;
+      }
+
+      .polytope-svg {
+        width: min(92vw, 420px);
+        height: min(92vw, 420px);
+      }
+
+      .hero-signature {
+        width: min(58vw, 180px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .full-bleed-field {
+        padding: 68px 14px 36px;
+      }
+
+      .hero-wordmark {
+        font-size: clamp(1.25rem, 7.4vw, 1.85rem);
+      }
+
+      .section-headline {
+        font-size: clamp(1.05rem, 8.2vw, 1.55rem);
+      }
+
+      .face-toggle-btn #faceLabel {
+        display: none;
+      }
+
+      .chip-cluster {
+        justify-content: flex-start;
+      }
+
+      .neo-chip {
+        max-width: none;
+        font-size: 0.6rem;
       }
     }
   </style>
@@ -905,7 +1113,7 @@
         <span style="background:#303188;"></span>
         <span style="background:#FAA61A;"></span>
       </span>
-      <span id="faceLabel">FACE: #303188 / #FAA61A</span>
+        <span id="faceLabel">FACE</span>
     </button>
   </header>
 
@@ -1036,11 +1244,11 @@
         <div class="dark-ui-body">
           <div class="dark-ui-hairline-cell">
             <div id="pillarWhitePanel" class="white-ui-panel">
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <div class="exp-header-row" style="margin-bottom:10px;">
                 <span id="pillarCode" class="status-pill-indigo">SYS-01 // MV/LV GRID TO RACK</span>
                 <span id="pillarMetricBadge" class="status-pill-accent">REDUNDANT N+1 / 2N</span>
               </div>
-              <h3 id="pillarTitle" style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:1.55rem; text-transform:uppercase; margin-bottom:10px;">
+              <h3 id="pillarTitle" style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:clamp(1.05rem, 4.4vw, 1.55rem); text-transform:uppercase; margin-bottom:10px; overflow-wrap:anywhere;">
                 Power Infrastructure &amp; Substation Integration
               </h3>
               <p id="pillarDesc" class="body-copy" style="color:var(--black); font-weight:400;">
@@ -1055,7 +1263,7 @@
 
             <!-- Second White Panel: Relevance to GPU Data Center Build-Out -->
             <div class="white-ui-panel">
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <div class="exp-header-row" style="margin-bottom:8px;">
                 <span class="status-pill-accent">AI / GPU READINESS VERIFICATION</span>
                 <span class="label-thin" style="color:var(--black); font-weight:600;">SCALE FOUNDATION</span>
               </div>
@@ -1073,7 +1281,7 @@
               </div>
 
               <div class="telemetry-bar-row">
-                <div style="display:flex; justify-content:space-between;" class="label-thin">
+                <div class="exp-header-row label-thin">
                   <span>SUBSTATION-LEVEL POWER REDUNDANCY</span>
                   <span style="color:var(--amber);">100%</span>
                 </div>
@@ -1083,7 +1291,7 @@
               </div>
 
               <div class="telemetry-bar-row">
-                <div style="display:flex; justify-content:space-between;" class="label-thin">
+                <div class="exp-header-row label-thin">
                   <span>ULTRA-LOW-LATENCY DWDM INTERCONNECT</span>
                   <span style="color:var(--amber);">98%</span>
                 </div>
@@ -1093,7 +1301,7 @@
               </div>
 
               <div class="telemetry-bar-row">
-                <div style="display:flex; justify-content:space-between;" class="label-thin">
+                <div class="exp-header-row label-thin">
                   <span>PRECISION COOLING (40KW+ PER RACK)</span>
                   <span style="color:var(--amber);">96%</span>
                 </div>
@@ -1103,7 +1311,7 @@
               </div>
 
               <div class="telemetry-bar-row">
-                <div style="display:flex; justify-content:space-between;" class="label-thin">
+                <div class="exp-header-row label-thin">
                   <span>PREDICTIVE SCADA / BMS CAPACITY PLANNING</span>
                   <span style="color:var(--amber);">100%</span>
                 </div>
@@ -1123,7 +1331,7 @@
         </div>
 
         <!-- All 5 Industry Sectors & Every Named Enterprise Client -->
-        <div style="padding:14px 18px; border-bottom:1px solid var(--white); display:flex; justify-content:space-between; align-items:center;">
+        <div class="exp-header-row" style="padding:14px 18px; border-bottom:1px solid var(--white);">
           <span class="label-thin" style="color:var(--amber);">COMMISSIONED ENTERPRISE &amp; CARRIER FOOTPRINT (5 SECTORS // 50+ INSTITUTIONS)</span>
           <span class="status-pill-indigo">INDONESIA-WIDE</span>
         </div>
@@ -1203,7 +1411,7 @@
         <!-- 01: CAST/|SOFT -->
         <article class="exp-card featured-exp reveal-slide">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="exp-header-row">
               <span class="exp-index">01 // CURRENT</span>
               <span class="label-thin">AI &amp; INFRA ADVISORY</span>
             </div>
@@ -1219,7 +1427,7 @@
         <!-- 02: PT Fiber Tekno Inovasi -->
         <article class="exp-card reveal-slide">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="exp-header-row">
               <span class="exp-index">02 // FTTH MFG</span>
               <span class="label-thin">OPERATIONS</span>
             </div>
@@ -1235,7 +1443,7 @@
         <!-- 03: PT Trisula Laut Digital -->
         <article class="exp-card reveal-slide">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="exp-header-row">
               <span class="exp-index">03 // DIVEINC.CO</span>
               <span class="label-thin">PLATFORM CTO</span>
             </div>
@@ -1251,7 +1459,7 @@
         <!-- 04: PT Avenew Indonesia -->
         <article class="exp-card reveal-slide">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="exp-header-row">
               <span class="exp-index">04 // ENTERPRISE PMP</span>
               <span class="label-thin">GENERAL MANAGEMENT</span>
             </div>
@@ -1267,7 +1475,7 @@
         <!-- 05: PT Surveyor Indonesia -->
         <article class="exp-card featured-exp reveal-slide">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="exp-header-row">
               <span class="exp-index">05 // PALAPA RING</span>
               <span class="label-thin">NATIONAL STRATEGIC PROJECT</span>
             </div>
@@ -1287,7 +1495,7 @@
         <!-- 06: PT Terrabit Network Indonesia -->
         <article class="exp-card reveal-slide">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="exp-header-row">
               <span class="exp-index">06 // TELECOM</span>
               <span class="label-thin">TRANSMISSION &amp; BTS</span>
             </div>
@@ -1303,7 +1511,7 @@
         <!-- 07: ILSINTECH -->
         <article class="exp-card reveal-slide">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="exp-header-row">
               <span class="exp-index">07 // OPTICAL PRINCIPAL</span>
               <span class="label-thin">KOREA HQ PRINCIPAL</span>
             </div>
@@ -1319,7 +1527,7 @@
         <!-- 08: EXFO -->
         <article class="exp-card reveal-slide">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="exp-header-row">
               <span class="exp-index">08 // TEST &amp; MEASUREMENT</span>
               <span class="label-thin">REGIONAL LEADERSHIP</span>
             </div>
@@ -1335,7 +1543,7 @@
         <!-- 09: CommScope -->
         <article class="exp-card featured-exp reveal-slide">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="exp-header-row">
               <span class="exp-index">09 // GLOBAL PRINCIPAL</span>
               <span class="label-thin">COMMSCOPE / SYSTIMAX / ANDREW</span>
             </div>
@@ -1355,7 +1563,7 @@
         <!-- 10: ZTE Corporation -->
         <article class="exp-card reveal-slide">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="exp-header-row">
               <span class="exp-index">10 // CARRIER NEM</span>
               <span class="label-thin">ACCOUNT LEADERSHIP</span>
             </div>
@@ -1371,7 +1579,7 @@
         <!-- 11: PT Sistem Integra Indonesia -->
         <article class="exp-card reveal-slide">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="exp-header-row">
               <span class="exp-index">11 // ASP EXECUTIVE</span>
               <span class="label-thin">PRESIDENCY</span>
             </div>
@@ -1391,7 +1599,7 @@
         <!-- 12: PT AIT Sigma Indonesia -->
         <article class="exp-card reveal-slide">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="exp-header-row">
               <span class="exp-index">12 // SOFTWARE HOUSE [6 ROLES]</span>
               <span class="label-thin">FULL-STACK PROGRESSION</span>
             </div>
@@ -1462,7 +1670,7 @@
       </div>
 
       <!-- 2x2 Hard-Edged Matrix: Education, Languages, Honors/Interests, Martial Arts/Hobbies -->
-      <div class="exp-grid reveal-slide reveal-delay-2" style="grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));">
+      <div class="exp-grid reveal-slide reveal-delay-2">
         <!-- Education & Credentials -->
         <div class="brutalist-box brutalist-box-solid-white">
           <span class="status-pill-indigo" style="margin-bottom:12px;">EDUCATION &amp; ACADEMIC CREDENTIALS</span>
@@ -1503,7 +1711,7 @@
             </ul>
           </div>
 
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div class="matrix-split">
             <div style="border:2px solid var(--black); padding:14px; background:var(--white);">
               <span class="status-pill-indigo" style="margin-bottom:8px;">INTERESTS</span>
               <ul style="list-style:square; padding-left:16px; font-size:0.85rem; line-height:1.55;">
@@ -1630,7 +1838,7 @@
           <div class="contact-details-pane">
             <div>
               <span class="status-pill-indigo" style="margin-bottom:12px;">EXECUTIVE COMMUNICATIONS</span>
-              <h3 style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:2rem; text-transform:uppercase; line-height:1;">
+              <h3 style="font-family:'Open Sans',sans-serif; font-weight:800; font-size:clamp(1.25rem, 6vw, 2rem); text-transform:uppercase; line-height:1.05; overflow-wrap:anywhere;">
                 YONGKY JOYODININGRAT
               </h3>
               <p class="label-thin" style="margin-top:6px; font-weight:600;">
@@ -1726,9 +1934,7 @@
         const current = htmlEl.getAttribute('data-face');
         const next = current === 'indigo' ? 'amber' : 'indigo';
         htmlEl.setAttribute('data-face', next);
-        faceLabel.textContent = next === 'indigo'
-          ? 'FACE: #303188 / #FAA61A'
-          : 'FACE: #FAA61A / #303188';
+        faceLabel.textContent = 'FACE';
       });
 
       /* 2. MATHEMATICAL POLYTOPE CHORD GENERATOR (Recreating the Resume's E8/Polytope Graph in Crisp Vector Lines) */
